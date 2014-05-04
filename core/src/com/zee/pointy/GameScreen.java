@@ -4,16 +4,15 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import static com.zee.pointy.Constants.*;
 
 public class GameScreen implements Screen {
 
 	private OrthographicCamera gameCam;
 	private SpriteBatch spriteBatch;
-	private Sprite greyPanel;
+	private Panel greyPanel;
+	private Arrow greenArrow;
 
 	public GameScreen() {
 		
@@ -23,10 +22,9 @@ public class GameScreen implements Screen {
 		spriteBatch = new SpriteBatch();
 		spriteBatch.setProjectionMatrix(gameCam.combined);
 		
-        greyPanel = new Sprite(Assets.greyPanel);
-        float x = SCREEN_WIDTH / 2.0f - greyPanel.getWidth() / 2.0f;
-        float y = SCREEN_HEIGHT / 2.0f - greyPanel.getHeight() / 2.0f;
-        greyPanel.setPosition(x, y);
+		greyPanel = new Panel(PanelType.GREY, ArrowType.BLUE_UP);
+		greyPanel.setPosition(SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0f);
+		
 	}
 
 	private void draw() {
@@ -37,6 +35,12 @@ public class GameScreen implements Screen {
         // Draw game items
         spriteBatch.begin();
         greyPanel.draw(spriteBatch);
+        Arrow temp = new Arrow(ArrowType.BLUE_DOWN);
+        temp.setPositionCenter(greyPanel);
+        temp.draw(spriteBatch);
+		greenArrow = new Arrow(ArrowType.GREEN_LEFT);
+		greenArrow.setPositionLeft(greyPanel);
+        greenArrow.draw(spriteBatch);
         spriteBatch.end();
 	}
 
