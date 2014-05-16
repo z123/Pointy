@@ -3,8 +3,6 @@ package com.zee.pointy;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
-import com.zee.pointy.Constants.PanelType;
-import com.zee.pointy.Constants.ArrowType;
 
 public class Panel {
 
@@ -35,7 +33,6 @@ public class Panel {
 				this.panelImage = Assets.yellowPanel;
 				break;
 		}
-
 		position = new Vector2();
 	}
 	

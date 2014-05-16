@@ -13,7 +13,7 @@ public class Arrow {
 	public Arrow(ArrowType arrowType) {
 		this.arrowType  = arrowType;
 
-		// Holy fuck dude organize this crap
+		// Holy fuck dude organize this shit 
 		switch (arrowType) {
 			case BLUE_LEFT:
 				this.arrowImage = Assets.blueArrowLeft;
@@ -71,7 +71,14 @@ public class Arrow {
 	public void draw(Batch batch) {
 		batch.draw(arrowImage, position.x, position.y);
 	}
-	
+
+	public boolean contains(float x, float y) {
+		float width = arrowImage.getRegionWidth();
+		float height = arrowImage.getRegionHeight();
+		return x >= position.x && x < position.x + width
+				&& y >= position.y && y < position.y + height;
+	}
+
 	public ArrowType getArrowType() {
 		return arrowType;
 	}

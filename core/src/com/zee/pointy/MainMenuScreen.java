@@ -41,7 +41,7 @@ public class MainMenuScreen implements Screen {
 		if (Gdx.input.justTouched()) {
 			menuCam.unproject(touchPoint.set(Gdx.input.getX(), Gdx.input.getY(), 0));
 			if (playButton.contains(touchPoint.x, touchPoint.y)) {
-				game.setScreen(new GameScreen());
+				game.setScreen(new GameScreen(game));
 			}
 		}
 	}
@@ -73,8 +73,7 @@ public class MainMenuScreen implements Screen {
 	}
 	
 	public void drawButtons() {
-		playButton.centerHorizontallyOn(SCREEN_WIDTH / 2.0f);
-		playButton.centerVerticallyOn(SCREEN_HEIGHT / 2.0f);
+		playButton.setPosition(SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0f);
 		playButton.draw(spriteBatch);
 	}
 

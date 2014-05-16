@@ -13,6 +13,7 @@ public class Assets {
 	private static final String greySheet = "greySheet.txt";
 	private static final String redSheet = "redSheet.txt";
 	private static final String yellowSheet = "yellowSheet.txt";
+	private static final String arrowSheet = "arrowSheet.atlas";
 	
 	// Variables 
 	private static TextureAtlas atlas;
@@ -58,6 +59,7 @@ public class Assets {
 	private static void loadTextures() {
 		atlas = new TextureAtlas(Gdx.files.internal(blueSheet));
 		bluePanel = atlas.findRegion("blue_panel");
+		atlas = new TextureAtlas(Gdx.files.internal(arrowSheet));
 		blueArrowLeft = atlas.findRegion("blue_sliderLeft");
 		blueArrowRight = atlas.findRegion("blue_sliderRight");
 		blueArrowUp = atlas.findRegion("blue_sliderUp");
@@ -65,6 +67,7 @@ public class Assets {
 
 		atlas = new TextureAtlas(Gdx.files.internal(greenSheet));
 		greenPanel = atlas.findRegion("green_panel");
+		atlas = new TextureAtlas(Gdx.files.internal(arrowSheet));
 		greenArrowLeft = atlas.findRegion("green_sliderLeft");
 		greenArrowRight = atlas.findRegion("green_sliderRight");
 		greenArrowUp = atlas.findRegion("green_sliderUp");
@@ -73,6 +76,7 @@ public class Assets {
 		atlas = new TextureAtlas(Gdx.files.internal(greySheet));
 		greyButton = atlas.findRegion("grey_button01");
 		greyPanel = atlas.findRegion("grey_panel");
+		atlas = new TextureAtlas(Gdx.files.internal(arrowSheet));
 		greyArrowLeft = atlas.findRegion("grey_sliderLeft");
 		greyArrowRight = atlas.findRegion("grey_sliderRight");
 		greyArrowUp = atlas.findRegion("grey_sliderUp");
@@ -80,6 +84,7 @@ public class Assets {
 
         atlas = new TextureAtlas(Gdx.files.internal(redSheet));
 		redPanel = atlas.findRegion("red_panel");	
+		atlas = new TextureAtlas(Gdx.files.internal(arrowSheet));
         redArrowLeft = atlas.findRegion("red_sliderLeft");
 		redArrowRight = atlas.findRegion("red_sliderRight");
 		redArrowUp = atlas.findRegion("red_sliderUp");
@@ -87,6 +92,7 @@ public class Assets {
 
         atlas = new TextureAtlas(Gdx.files.internal(yellowSheet));
 		yellowPanel = atlas.findRegion("yellow_panel");
+		atlas = new TextureAtlas(Gdx.files.internal(arrowSheet));
         yellowArrowLeft = atlas.findRegion("yellow_sliderLeft");
 		yellowArrowRight = atlas.findRegion("yellow_sliderRight");
 		yellowArrowUp = atlas.findRegion("yellow_sliderUp");
